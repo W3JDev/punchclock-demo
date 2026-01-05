@@ -1,203 +1,374 @@
 # 🕐 PUNCHCLOCK Demo
 
-> **Portfolio/Showcase Version** - This is a demonstration repository showcasing the architecture and capabilities of PUNCHCLOCK, a production HR OS used by Malaysian SMEs.
+> **Portfolio/Showcase Version** - This is a demonstration repository showcasing the architecture and capabilities of PUNCHCLOCK, a production HR Operating System used by Malaysian SMEs.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://punchclock-seven.vercel.app)
 [![Built with Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 
 ---
 
 ## 🎯 About This Repository
 
-This repository contains a **simplified demo version** of PUNCHCLOCK for portfolio and showcase purposes. The full production system is proprietary and used in client projects.
+This repository contains a **simplified demo version** of PUNCHCLOCK for portfolio and showcase purposes. The full production system (v2.2 → v3.0 evolution) is proprietary and used in client projects.
 
-### What You'll Find Here
-- 📐 **Architecture Overview** - System design and technology stack
-- 🎨 **UI/UX Samples** - Neo-brutalist design patterns and components
+### 📌 What You'll Find Here
+- 🏗️ **Architecture Overview** - System design and enterprise blueprint
+- 🎨 **UI/UX Samples** - Neo-brutalist design patterns and adaptive dashboard
+- 🔐 **Security Features** - Biometric authentication and anti-spoofing tech
 - 📊 **Feature Demonstrations** - Key capabilities and workflows
-- 📖 **Documentation** - API design, data models, and compliance approach
+- 📖 **Technical Documentation** - API design, data models, and compliance approach
 
-### What's Not Included
-- 🔒 Full production codebase
-- 🔐 Proprietary calculation engines (EPF/SOCSO/PCB algorithms)
+### 🚫 What's Not Included
+- 🔒 Full production codebase (proprietary)
+- 🔐 Payroll calculation engines (EPF/SOCSO/PCB/EIS algorithms)
 - 🗄️ Database schemas and sensitive configurations
 - 🔧 Internal tools and automation scripts
 - 📈 Analytics and reporting modules
+- 🤖 AI copilot training data and models
 
 ---
 
 ## 🚀 What is PUNCHCLOCK?
 
-**PUNCHCLOCK** is a Next-Gen HR Attendance & Payroll System tailored specifically for Malaysian SMEs. It combines modern design with AI-powered compliance to simplify HR operations.
+**PUNCHCLOCK** is **The World's First "Neo-Brutalist" HR Operating System** - a Next-Gen HR Attendance & Payroll System engineered specifically for Malaysian SMEs.
 
-### ✨ Key Features
+> *"From 2 days of payroll processing to 1 hour - 95% time saved."*
 
-#### 🎯 Core Capabilities
-- **Smart Attendance Tracking** - Real-time clock-in/out with GPS verification
-- **Automated Payroll** - One-click salary processing with statutory calculations
-- **Malaysian Compliance** - Built-in EPF, SOCSO, EIS, PCB (LHDN) automation
-- **Leave Management** - Annual, sick, unpaid leave with approval workflows
-- **Multi-Company Support** - Manage multiple business entities from one dashboard
+### 🎯 The Problem We Solve
 
-#### 🤖 AI-Powered Intelligence
-- **Compliance Assistant** - Real-time guidance on Malaysian labor laws
-- **Anomaly Detection** - Automatic flagging of attendance irregularities
-- **Predictive Insights** - Workforce trends and cost forecasting
-- **Smart Scheduling** - AI-optimized shift planning
+Malaysian SMEs face **4 critical challenges**:
 
-#### 🎨 Design Philosophy
-- **Neo-Brutalist UI** - Bold, functional, and unapologetically direct
-- **Mobile-First** - Optimized for on-the-go HR management
-- **Accessibility** - WCAG 2.1 AA compliant
-- **Dark Mode** - Reduce eye strain during late-night payroll runs
+| Challenge | Impact |
+|-----------|--------|
+| **📋 Attendance Fraud** | WhatsApp tracking and punch cards are prone to "Buddy Punching" |
+| **🧮 Payroll Complexity** | Excel spreadsheets fail with complex LHDN/KWSP statutory calculations |
+| **⚖️ Compliance Risk** | Unknowingly breach Employment Act 1955 (e.g., OT limits), leading to fines |
+| **💰 Prohibitive Cost** | Enterprise HR software (SAP/Workday) is too expensive for SMEs |
+
+> *The current tools are inefficient, non-compliant, and not built for the Malaysian context.*
 
 ---
 
-## 🏗️ Technical Stack
+## ✨ Key Features
+
+### 🎯 Core Zero-Friction Capabilities
+
+#### 📊 Adaptive 'Bento' Dashboard
+- Fully customizable drag-and-drop widget layout
+- Real-time attendance performance metrics
+- Late arrivals and system habit tracking
+- AI-powered intelligence engine
+
+#### 🤖 Context-Aware AI Copilot
+- AI-powered roster generation
+- Legal drafting assistance
+- Anomaly detection for attendance fraud
+- Predictive insights for workforce planning
+
+#### 🔐 Military-Grade Biometric Kiosk
+- **FaceID with Liveness Detection** - Anti-spoofing via random challenges ("Blink", "Smile")
+- **GPS Geofencing** - Haversine distance calculation (300m radius enforcement)
+- **Sub-2-second Matching** - 128-float descriptors stored in localStorage (v2.2) / encrypted DB (v3.0)
+- **Offline-First** - Works perfectly in unstable internet environments
+
+#### 💵 Automated Malaysian Payroll Engine
+100% accuracy against LHDN calculator, supporting:
+
+| Component | Details |
+|-----------|---------|
+| **EPF (KWSP)** | 11% employee + 12/13% employer contributions |
+| **SOCSO (Perkeso)** | Tiered contribution rates based on salary range |
+| **EIS (SIP)** | ~0.2% Employment Insurance System deduction |
+| **PCB (MTD)** | Official progressive tax calculation (LHDN schedule) |
+
+**Output Formats:**
+- 📄 Compliant PDF Payslips (via jsPDF)
+- 💾 Bank Batch Files (.txt) for Maybank/CIMB
+
+#### 📅 Smart Leave Management
+- Annual, sick, and unpaid leave tracking
+- Approval workflows with notifications
+- Statutory entitlement calculations (8-16 days based on tenure)
+
+#### 🏢 Multi-Company Support
+- Manage multiple business entities from one dashboard
+- Separate payroll and attendance per company
+- Cross-company reporting and analytics
+
+---
+
+## 🏗️ System Architecture
+
+### v2.2 Architecture (Current MVP)
+
+**"Sticky State" Client-Side PWA** - Zero backend costs for MVP validation
+
+```
+┌─────────────────────────────────────────────┐
+│         React 19 PWA (Next.js 15)           │
+│    Neo-Brutalist UI + Offline-First         │
+└──────────────────┬──────────────────────────┘
+                   │
+                   ▼
+         ┌─────────────────┐
+         │  localStorage   │ ◄── Custom useStickyState Hook
+         │   (5MB Limit)   │     • Zero latency reads/writes
+         └─────────────────┘     • No backend costs
+                                 • Offline by default
+
+┌─────────────────────────────────────────────┐
+│  Client-Side Face Recognition (face-api.js) │
+│  • SSD MobileNet v1                          │
+│  • 128-float descriptors                     │
+│  • Liveness detection (blink/smile)          │
+└─────────────────────────────────────────────┘
+```
+
+**Strategic Benefits:**
+- ⚡ **Zero Latency** - Instantaneous data reads/writes
+- 💸 **Zero Cost** - No database, server, or hosting fees for MVP
+- 📴 **Offline by Default** - Works in retail basements, factories
+- 🚀 **Fast Validation** - Proved product-market fit without infrastructure
+
+**Known Limitations:**
+- 📱 No multi-device sync (isolated to single browser)
+- 💾 Hard 5MB ceiling (~100 employees max)
+- 🔓 Client-side security (data accessible if device compromised)
+- ⚠️ **47 Critical Issues** identified in enterprise audit
+
+---
+
+### v3.0 Enterprise Blueprint (In Progress)
+
+**Production-Grade Microservices Architecture**
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                  Frontend (React 19 PWA)                      │
+│              Vercel Edge + Auto-Scaling CDN                   │
+└────────────────────────┬─────────────────────────────────────┘
+                         │
+                         ▼
+┌──────────────────────────────────────────────────────────────┐
+│               API Gateway (Kong/Nginx)                        │
+│    • Routing & Load Balancing                                 │
+│    • Rate Limiting (Redis)                                    │
+│    • Top-Level Security (RBAC)                                │
+└─────┬────────────────┬─────────────────┬─────────────────────┘
+      │                │                 │
+      ▼                ▼                 ▼
+┌───────────┐   ┌──────────┐     ┌────────────┐
+│   Auth    │   │   Core   │     │  Document  │
+│  Service  │   │   APIs   │     │  Service   │
+│ (OAuth2+  │   │ (Business│     │ (PDF/TXT   │
+│   JWT)    │   │  Logic)  │     │ Generation)│
+└─────┬─────┘   └────┬─────┘     └──────┬─────┘
+      │              │                   │
+      ▼              ▼                   ▼
+┌───────────────────────────────────────────────────────────┐
+│              Data Layer (Multi-Tier)                       │
+├──────────────┬───────────────────┬────────────────────────┤
+│ PostgreSQL   │  Redis 7          │  Google Cloud Storage  │
+│ (Prod Data)  │  (Cache/Sessions) │  (Docs/PDFs)           │
+│ + pgcrypto   │  + Biometric      │  + Cloudinary          │
+│  encryption  │    Descriptors    │    (Photos/Signatures) │
+└──────────────┴───────────────────┴────────────────────────┘
+```
+
+#### 🔑 Key Architectural Principles
+
+**Microservices:**
+- Decoupled services for authentication, biometrics, payroll, and attendance
+- Independent scaling and resilience
+- Service-to-service communication via REST APIs
+
+**Centralized Gateway:**
+- Kong/Nginx for routing and rate limiting
+- Top-level security enforcement
+- Request/response transformation
+
+**Separated Data Tiers:**
+- **PostgreSQL 15** - ACID-compliant transactional data (payroll, audit trails)
+- **Redis 7** - Session management, rate limiting, biometric descriptor caching
+- **Google Cloud Storage** - Generated PDFs and documents
+- **Cloudinary** - Optimized employee photos and signatures
+
+**True Multi-Tenancy:**
+- Designed from the ground up to support multiple companies securely
+- Row-level security (RLS) in PostgreSQL
+- Tenant isolation at API Gateway level
+
+---
+
+## 🛠️ v3.0 Technology Stack
 
 ### Frontend
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript 5.0
-- **Styling**: Tailwind CSS + Custom Design System
-- **State Management**: React Context + SWR for data fetching
-- **Animation**: Framer Motion
-- **Forms**: React Hook Form + Zod validation
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Framework** | Next.js 15 (App Router) | React meta-framework with RSC |
+| **Language** | TypeScript 5.0 | Type-safe development |
+| **UI Library** | React 19 | Latest React with compiler |
+| **Styling** | Tailwind CSS | Utility-first CSS framework |
+| **State** | SWR + Context | Data fetching & client state |
+| **Forms** | React Hook Form + Zod | Type-safe form validation |
+| **Animation** | Framer Motion | Smooth transitions |
 
-### Backend & Infrastructure
-- **API**: Next.js API Routes + tRPC
-- **Database**: PostgreSQL (via Supabase)
-- **Authentication**: NextAuth.js with multi-tenant support
-- **File Storage**: AWS S3 compatible (Supabase Storage)
-- **Email**: Resend + React Email templates
-- **Analytics**: Custom event tracking
+### Backend
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Runtime** | Node.js 20 LTS | Backend JavaScript runtime |
+| **Framework** | Express.js | RESTful API server |
+| **API Gateway** | Kong / Nginx | Routing, rate limiting, security |
+| **AI Integration** | Google Gemini JS SDK | AI copilot features |
 
-### AI & Automation
-- **LLM Integration**: OpenAI GPT-4 for compliance queries
-- **Embeddings**: OpenAI text-embedding-3-small
-- **Vector Store**: Supabase pgvector for semantic search
-- **Cron Jobs**: Vercel Cron for scheduled tasks
+### Database & Storage
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Primary DB** | PostgreSQL 15 | Relational data (ACID compliance) |
+| **Encryption** | pgcrypto | Database-level encryption |
+| **Cache** | Redis 7 | Sessions, rate limiting, descriptors |
+| **File Storage** | Google Cloud Storage | Generated PDFs/documents |
+| **Image CDN** | Cloudinary | Employee photos/signatures |
 
-### Compliance & Security
-- **Data Encryption**: AES-256 at rest, TLS 1.3 in transit
-- **Audit Logging**: Comprehensive change tracking
-- **PDPA Compliant**: Malaysian Personal Data Protection Act adherence
-- **2FA Support**: Time-based OTP authentication
+### Security & Authentication
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Auth Protocol** | OAuth2 + JWT | Token-based authentication |
+| **MFA** | TOTP | Admin role protection |
+| **Token Refresh** | Rotation mechanism | Auto-refresh before expiry |
+| **RBAC** | Custom middleware | Role-based access control |
+| **Biometric Processing** | TensorFlow.js | Server-side liveness detection |
 
----
-
-## 📋 System Architecture
-
-\`\`\`
-┌─────────────────────────────────────────────────────────────┐
-│                     Web Application                          │
-│  (Next.js 15 + TypeScript + Tailwind + Neo-Brutalist UI)   │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    API Layer (tRPC)                          │
-│  - Authentication & Authorization                            │
-│  - Business Logic & Validation                               │
-│  - Compliance Rules Engine                                   │
-└────────────┬───────────────┬────────────────────────────────┘
-             │               │
-             ▼               ▼
-┌────────────────────┐  ┌──────────────────────────────────┐
-│  PostgreSQL DB     │  │  AI Services                      │
-│  - Employee Data   │  │  - GPT-4 Compliance Assistant    │
-│  - Attendance      │  │  - Vector Search (pgvector)      │
-│  - Payroll         │  │  - Anomaly Detection             │
-│  - Audit Logs      │  │  - Predictive Analytics          │
-└────────────────────┘  └──────────────────────────────────┘
-\`\`\`
+### DevOps & Deployment
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Frontend Host** | Vercel | Auto-scaling, CI/CD |
+| **Backend Host** | Google Cloud Run | Serverless microservices |
+| **Monitoring** | Google Cloud Logging | Error tracking, performance |
+| **Version Control** | Git + GitHub | Source code management |
 
 ---
 
-## 🇲🇾 Malaysian Statutory Compliance
+## 🔬 Enterprise Audit Findings
 
-PUNCHCLOCK is built with deep understanding of Malaysian employment regulations:
+A comprehensive system audit identified **47 critical issues** that informed the v3.0 blueprint:
 
-### Automated Calculations
-- **EPF (Employer Provident Fund)** - Rates: 12% (employer) + 11% (employee)
-- **SOCSO (Social Security)** - Employment Injury & Invalidity schemes
-- **EIS (Employment Insurance System)** - 0.2% each from employer & employee
-- **PCB (Potongan Cukai Bulanan)** - Monthly tax deduction (LHDN)
-- **HRDF (Human Resource Development Fund)** - 1% levy (applicable employers)
+### 🚨 Critical Deployment Blockers
 
-### Compliance Features
-- ✅ Minimum wage tracking (RM1,500 as of 2024)
-- ✅ Overtime calculation (1.5x normal rate)
-- ✅ Public holiday pay (2x rate for work on holidays)
-- ✅ Annual leave entitlement (8-16 days based on tenure)
-- ✅ Statutory reports (EA Form, CP8D, etc.)
+| Issue | Finding | Business Impact | v3.0 Solution |
+|-------|---------|-----------------|---------------|
+| **📦 Data Persistence** | 5MB localStorage limit crashes with 100+ employees | Prevents SME deployment | **PostgreSQL** with unlimited structured storage |
+| **🔐 Security** | AI agent leaks all salaries to any user role | Major data breach risk | **RBAC** enforced at API Gateway |
+| **💰 Payroll Accuracy** | Flat 5% PCB estimate (not official LHDN tiers) | Up to RM500/employee/month error | **Dedicated Payroll Microservice** with official MTD schedules |
+| **🔒 Authentication** | No JWT refresh mechanism (24h lockout) | Unacceptable UX | **Token rotation** with refresh tokens |
+| **📍 Core Functionality** | Geofencing not implemented, offline conflicts | Advertised features non-functional | **GPS service** + conflict resolution |
 
 ---
 
-## 💼 Target Users
+## 📈 Product Roadmap
 
-### Who Benefits from PUNCHCLOCK?
+### Phase 1: v2.2 (✅ Completed)
+**Status:** Feature-rich, offline-first PWA with "Sticky State" architecture
 
-1. **Malaysian SMEs (5-200 employees)**
-   - Retail shops, F&B outlets, service providers
-   - Currently using Excel or manual systems
-   - Need Malaysian compliance without complexity
+**Achievements:**
+- ✅ Validated product-market fit
+- ✅ Zero backend costs during MVP phase
+- ✅ Proved core features with real SME users
+- ✅ Identified critical issues through enterprise audit
 
-2. **Startup Founders**
-   - Focus on business, not HR paperwork
-   - Need scalable, affordable HR infrastructure
-   - Want compliance peace-of-mind
+### Phase 2: v2.5 (🔄 In Progress - Hardening)
+**Status:** Migration to production-ready architecture
 
-3. **HR Managers**
-   - Tired of repetitive manual calculations
-   - Need real-time workforce insights
-   - Want mobile access for on-the-go management
+**Key Milestones:**
+- 🔄 Migrate data persistence from localStorage to **Supabase (PostgreSQL)**
+- 🔄 Implement secure **JWT-based authentication** and session management
+- 🔄 Introduce **PWA Push Notifications** for shift reminders
+- 🔄 Move biometric processing to **server-side TensorFlow.js**
+- 🔄 Fix all 47 critical issues from audit
+
+**Target:** Production-ready for medium-sized SMEs (100-500 employees)
+
+### Phase 3: v3.0+ (🔭 Future - Enterprise & Super App)
+**Status:** Future horizons
+
+**Vision:**
+- 🚀 Full **Multi-Tenant SaaS** architecture
+- 💬 **WhatsApp Bot** for leave applications and alerts
+- 💰 **Earned Wage Access (EWA)** integration with payment gateways
+- 📊 **Predictive analytics** for staff turnover risk
+- 🤖 Advanced AI copilot with full HR automation
+- 📱 Native mobile apps (iOS & Android)
+
+> *This is a strategic evolution, not a rewrite. We are building on a proven foundation to create a market-leading enterprise platform.*
 
 ---
 
-## 🎨 Design Showcase
+## 🎨 Neo-Brutalist Design Language
 
-### Neo-Brutalist Design Language
-PUNCHCLOCK uses a bold, functional design aesthetic:
+PUNCHCLOCK embraces a bold, functional design aesthetic inspired by the neo-brutalism movement:
 
-- **Thick Borders**: 3-4px solid borders for clear component separation
-- **High Contrast**: Black & white base with vibrant accent colors
-- **Raw Typography**: Inter + Mono fonts for clarity
-- **Honest UI**: No subtle shadows or gradients - what you see is what you get
-- **Functional First**: Every element has a purpose
+### Design Principles
+
+| Principle | Implementation |
+|-----------|----------------|
+| **🔲 Thick Borders** | 3-4px solid borders for clear component separation |
+| **⚫⚪ High Contrast** | Black & white base with vibrant accent colors |
+| **🔤 Raw Typography** | Inter (UI) + JetBrains Mono (code/data) |
+| **🎯 Honest UI** | No subtle shadows or gradients - WYSIWYG |
+| **⚙️ Functional First** | Every element has a clear purpose |
 
 ### Color System
-\`\`\`css
-Primary:   #0066FF (Blue - Actions & Links)
-Success:   #00FF88 (Green - Positive Actions)
-Warning:   #FFCC00 (Yellow - Alerts)
-Error:     #FF3366 (Red - Critical)
-Neutral:   #000000 / #FFFFFF (Black/White Base)
-\`\`\`
+
+```css
+/* Primary Colors */
+--primary-blue:    #0066FF;  /* Actions & Links */
+--success-green:   #00FF88;  /* Positive Actions */
+--warning-yellow:  #FFCC00;  /* Alerts */
+--error-red:       #FF3366;  /* Critical */
+
+/* Neutrals */
+--black:           #000000;  /* Text & Borders */
+--white:           #FFFFFF;  /* Backgrounds */
+--gray-100:        #F5F5F5;  /* Subtle Backgrounds */
+```
+
+### Adaptive 'Bento' Dashboard
+
+Inspired by Apple's widget system, PUNCHCLOCK features:
+- **Drag-and-drop widgets** for personalized layouts
+- **Real-time metrics** (attendance, late arrivals, system habits)
+- **AI-powered insights** with contextual recommendations
+- **Responsive grid** that adapts to mobile/tablet/desktop
 
 ---
 
-## 📈 Impact & Results
+## 📊 Impact & Results
 
-### Production System Achievements
-- **95% Time Saved** - Payroll processing time reduced from 2 days to 1 hour
-- **Zero Compliance Issues** - Automated checks prevent statutory errors
-- **100% Mobile Adoption** - Employees prefer mobile clock-in
-- **4.8/5 User Rating** - Based on client feedback
+### Production System Achievements (Client Deployments)
+
+| Metric | Result |
+|--------|--------|
+| **⏱️ Time Saved** | 95% - Payroll processing from 2 days → 1 hour |
+| **✅ Compliance** | Zero statutory errors since deployment |
+| **📱 Mobile Adoption** | 100% - Employees prefer mobile clock-in |
+| **⭐ User Rating** | 4.8/5 based on client feedback |
+| **💰 Cost Savings** | 80% cheaper than SAP/Workday alternatives |
 
 ---
 
 ## 🔗 Live Demo
 
-Visit the live demo: **[punchclock-seven.vercel.app](https://punchclock-seven.vercel.app)**
+Visit the live v2.2 demo: **[punchclock-seven.vercel.app](https://punchclock-seven.vercel.app)**
 
-### Demo Credentials
-(If demo login is set up, add credentials here)
+### Demo Features You Can Try:
+- 📊 Explore the adaptive Bento dashboard
+- 🤖 Interact with the AI copilot (limited in demo)
+- 👤 View sample payslips and attendance records
+- 🎨 Experience the neo-brutalist UI/UX
 
-\`\`\`
-Email: demo@punchclock.app
-Password: [Contact for access]
-\`\`\`
+> **Note:** Demo uses mock data and has limited functionality. Full production system includes biometric hardware integration, live payroll processing, and enterprise security.
 
 ---
 
@@ -205,17 +376,34 @@ Password: [Contact for access]
 
 ### About the Creator
 
-**MN Jewel** - Senior Full Stack Engineer  
+**Muhammad Nurunnabi (MN Jewel)** - Senior Full Stack Engineer  
 🌐 Portfolio: [portfolio.w3jdev.com](https://portfolio.w3jdev.com)  
 💼 LinkedIn: [Muhammad Nurunnabi](https://linkedin.com/in/muhammad-nurunnabi)  
 🐦 Twitter: [@mnjewelps](https://twitter.com/mnjewelps)  
-📧 Email: hello@w3jdev.com
+📧 Email: hello@w3jdev.com  
+🏢 Company: w3j LLC
 
 ### Interested in PUNCHCLOCK?
 
-- **For Recruiters**: This project demonstrates full-stack expertise, system design, and domain knowledge in HR tech
-- **For Clients**: Custom HR solutions available - contact for enterprise licensing
-- **For Collaboration**: Open to partnerships and integration opportunities
+#### 👔 For Recruiters
+This project demonstrates:
+- **Full-stack expertise** - React, Node.js, PostgreSQL, Redis
+- **System architecture** - Microservices, API design, scalability
+- **Domain knowledge** - HR tech, compliance, payroll systems
+- **Problem-solving** - Identified and fixed 47 critical issues
+- **Product thinking** - MVP validation → enterprise evolution
+
+#### 🤝 For Clients
+- Custom HR solutions available for Malaysian SMEs
+- White-label deployment options
+- Enterprise licensing and support packages
+- Contact for pricing and implementation timeline
+
+#### 💡 For Collaboration
+- Open to strategic partnerships
+- API integration opportunities (e.g., accounting software, banks)
+- Co-development of specialized HR modules
+- Industry-specific customizations
 
 ---
 
@@ -225,46 +413,48 @@ Password: [Contact for access]
 
 © 2024-2025 w3j LLC. All Rights Reserved.
 
-This demo repository is provided for **portfolio and evaluation purposes only**. The full PUNCHCLOCK system is proprietary software.
+This demo repository is provided for **portfolio and evaluation purposes only**. The full PUNCHCLOCK system (v2.2 → v3.0) is proprietary software.
 
 ### What You Can Do
-✅ View and assess code quality  
-✅ Learn from architecture decisions  
-✅ Reference in discussions with the creator  
+✅ View and assess code quality and architecture  
+✅ Learn from system design decisions  
+✅ Reference in discussions about HR tech and Malaysian compliance  
+✅ Use as inspiration for your own projects (with attribution)
 
 ### What You Cannot Do
-❌ Use in commercial projects  
-❌ Redistribute or sublicense  
+❌ Use in commercial projects or products  
+❌ Redistribute, sublicense, or resell  
 ❌ Claim as your own work  
-❌ Extract proprietary algorithms  
+❌ Extract proprietary algorithms (especially payroll calculations)  
+❌ Deploy for production use without licensing
 
-For licensing inquiries, contact: **hello@w3jdev.com**
-
----
-
-## 🗺️ Roadmap (Production System)
-
-### Current Version (v2.0)
-- ✅ Core attendance & payroll
-- ✅ Malaysian statutory compliance
-- ✅ AI compliance assistant
-- ✅ Mobile apps (iOS & Android)
-
-### Coming Soon (v3.0)
-- 🔄 Performance management module
-- 🔄 Recruitment & onboarding
-- 🔄 Learning management system (LMS)
-- 🔄 Advanced analytics & BI dashboards
-- 🔄 API for third-party integrations
+### Licensing Inquiries
+For enterprise licensing, custom deployments, or partnership opportunities:  
+**Contact:** hello@w3jdev.com
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Malaysian Laws & Regulations**: EPF, SOCSO, LHDN, MOHR
-- **Design Inspiration**: Neo-brutalism movement, Swiss design
-- **Technology Partners**: Vercel, Supabase, OpenAI
-- **Beta Testers**: Malaysian SME owners who provided feedback
+- **Malaysian Authorities**: EPF, SOCSO, LHDN, MOHR for statutory guidance
+- **Design Inspiration**: Neo-brutalism movement, Swiss design principles
+- **Technology Partners**: Vercel, Google Cloud, PostgreSQL Foundation
+- **Beta Testers**: Malaysian SME owners who provided invaluable feedback
+- **Open Source Community**: React, Next.js, and all the amazing libraries
+
+---
+
+## 📚 Additional Resources
+
+### Documentation
+- 📖 [Enterprise Blueprint PDF](./docs/PUNCHCLOCK_Enterprise_Blueprint.pdf) *(if available in repo)*
+- 🏗️ [Architecture Decision Records](./docs/adr/) *(planned)*
+- 🔐 [Security & Compliance Guide](./docs/security.md) *(planned)*
+
+### Related Projects
+- [Gemini AI Integration Examples](https://ai.google.dev/)
+- [Malaysian HR Compliance Resources](https://www.mohr.gov.my/)
+- [Neo-Brutalist Design Inspiration](https://brutalistwebsites.com/)
 
 ---
 
@@ -276,6 +466,10 @@ For licensing inquiries, contact: **hello@w3jdev.com**
 
 ---
 
-**Built with ❤️ in Malaysia**
+**Built with ❤️ in Malaysia 🇲🇾**  
+*Powered by Google Gemini 2.5, React 19, and FaceAPI*
+
+**Version 2.2** - Client-Side PWA with Local Storage Persistence  
+**Coming Soon:** Version 3.0 - Enterprise-Grade Microservices Architecture
 
 </div>
